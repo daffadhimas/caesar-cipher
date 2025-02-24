@@ -13,7 +13,7 @@ def caesar_chiper(original_text, shift_amount, encode_or_decode):
                 encrypted_text += chr((ord(char) + shift_amount - 65) % 26 + 65)
             else:
                 encrypted_text += char
-        print(f"Encrypted Text: {encrypted_text}")
+        print(f"\nEncrypted Text: {encrypted_text}")
     else:
         decrypted_text = ""
         for i in range(len(original_text)):
@@ -24,18 +24,20 @@ def caesar_chiper(original_text, shift_amount, encode_or_decode):
                 decrypted_text += chr((ord(char) - shift_amount - 65) % 26 + 65)
             else:
                 decrypted_text += char
-        print(f"Decrypted Text: {decrypted_text}")
+        print(f"\nDecrypted Text: {decrypted_text}")
+
+print("WELCOME TO CAESAR CIPHER PROGRAM!")
 
 user_continue = True
 
 while user_continue:
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-    text = input("Type your message:\n")
-    shift = int(input("Type the shift number:\n"))
+    direction = input("\nType 'encode' to encrypt, type 'decode' to decrypt: ").lower()
+    text = input("Type your message: ")
+    shift = int(input("Type the shift number: "))
 
     caesar_chiper(text, shift, direction)
 
-    yes_or_no = input("Type 'yes' if you want to go again. Otherwise, type 'no'.\n").lower()
+    yes_or_no = input("\nType 'yes' if you want to go again. Otherwise, type 'no': ").lower()
     if yes_or_no == 'no':
         user_continue = False
-        print("Goodbye")
+        print("\nGoodbye!")
